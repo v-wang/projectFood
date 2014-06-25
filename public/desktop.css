@@ -1,7 +1,11 @@
+
+/*RESET CSS*/
+
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
 */
+
 
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp,
@@ -9,6 +13,7 @@ small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, l
 table, caption, tbody, tfoot, thead, tr, th, td,
 article, aside, canvas, details, embed, 
 figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+
 	margin: 0;
 	padding: 0;
 	border: 0;
@@ -39,7 +44,6 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
-
 
 /* END RESET STYLESHEET */
 
@@ -110,6 +114,123 @@ a {
 
 
 
-
-
 /* END INDEX PAGE STYLESHEET */
+
+
+/*NAV*/
+nav {
+	width: 1440px;
+	height: 60px;
+	border: 1px black solid;
+}
+
+nav ul li{
+	display: inline-block;
+}
+/*END NAV*/
+
+
+/*FOOTER*/
+footer {
+	width: 1440px;
+	height: 50px;
+	border: 1px black solid;
+	position: relative;
+	top: 200px;
+}
+
+footer ul li {
+	display: inline-block;
+}
+
+footer img {
+	width: 40px;
+	height: 40px;
+}
+/*END FOOTER*/
+
+
+
+/*PROFILE PAGE*/
+#profile_content {
+	width: 1440px;
+	height: 700px;
+	border: 1px solid red;
+	position: relative;
+	margin: auto;
+	left: 0;
+	right: 0;
+	top: 100px;
+
+}
+
+#profile_left {
+	width: 300px;
+	height: 700px;
+	border: 1px solid black;
+	float: left;
+}
+
+#profile_box {
+	width: 200px;
+	height: 300px;
+	border: 1px solid green;
+	position: relative;
+	left:30px;
+}
+
+#profile_comment {
+	width: 200px;
+	height: 300px;
+	border: 1px solid red;
+	position: relative;
+	left:30px;
+}
+
+#profile_center {
+	width: 500px;
+	height: 700px;
+	border: 1px solid blue;
+	position: relative;
+	float: left;
+	left: 100px;
+}
+
+.profile_postbox {
+	width: 400px;
+	height: 200px;
+	border:1px solid red;
+}
+
+#profile_right {
+	width: 400px;
+	height: 700px;
+	border: 1px solid green;
+	position: relative;
+	float: left;
+	left:150px;
+}
+
+#profile_optbox {
+	width: 400px;
+	height: 60px;
+	border: 1px dashed red;
+}
+
+#profile_optbox ul li {
+	display: inline-block;
+}
+
+#profile_areadescription {
+	width: 400px;
+	height: 200px;
+	border: 1px solid black;
+}
+/*END PROFILE PAGE*/
+
+
+
+
+
+
+
