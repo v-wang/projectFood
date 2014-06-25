@@ -8,3 +8,7 @@ enable :sessions
 use Rack::Flash, :sweep => true
 set :sessions => true
 set :database, "sqlite3:form_app.sqlite3"
+
+get '/' do
+	erb :index
+end
