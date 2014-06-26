@@ -3,13 +3,41 @@
 <head>
 	<meta charset="UTF-8">
 	<title>food forum</title>
-
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="desktop.css">
+
 </head>
 <body>
+
+	<div id="main_container">
+
+<nav>
+
+			<ul>
+				<li>logo</li>
+				<li>nav stuff</li>
+				<li>nav stuff</li>
+				<li>nav stuff</li>
+			</ul>
+
+</nav>
+
+<div id="main_content">
 	
 <%= yield %>
 
 
+</div>
+
+		<footer>
+			<ul>
+				<li><a href=""><img src="images/linkedin.png" alt=""></a></li>
+				<li><a href=""><img src="images/fb.png" alt=""></a></li>
+				<li><a href=""><img src="images/twitter.png" alt=""></a></li>
+				<li><a href=""><img src="images/email.png" alt=""></a></li>
+			</ul>
+		</footer>
+
+	</div>
 </body>
 </html>
