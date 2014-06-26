@@ -52,3 +52,20 @@ end
 get '/index' do 
 	erb :index
 end
+
+get '/update' do
+	def current_user
+		if session[:user_id].nil?
+			"Not signed in!"
+		else
+			User.find(session[:user_id])
+			"All good!"	
+		end
+	end
+	current_user
+	erb :updateinfo
+end
+
+post '/update' do
+
+end
