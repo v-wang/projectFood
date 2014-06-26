@@ -216,12 +216,12 @@ footer img {
 	width: 1100px;
 	height: 700px;
 	/*border: 1px solid red;*/
-	background-color: rgba(0,0,0,0.1);
+	/*background-color: rgba(0,0,0,0.1);*/
 	position: relative;
 	margin: auto;
 	left: 0;
 	right: 0;
-	background-color: #89FF97;
+	top:60px;
 }
 
 #profile_bar {
@@ -230,7 +230,8 @@ footer img {
 	/*border: 1px solid black;*/
 	float: left;
 	position: relative;
-	background-color: rgba(0,0,0,0.3);
+	bottom: 60px;
+	/*background-color: rgba(0,0,0,0.1);*/
 }
 
 #profile_box {
@@ -252,7 +253,7 @@ footer img {
 
 #profile_box p {
 	position: relative;
-	top:28px;
+	top:8px;
 	line-height: 18px;
 	border: 1px black solid;
 	width: 98px;
@@ -292,9 +293,11 @@ footer img {
 #profile_topbox {
 	height: 400px;
 	width: 1000px;
-	border: 1px solid black;
+	border: 1px solid #ff9540;
 	position: relative;
-	top: 205px;
+	left:30px;
+	top: 215px;
+	background-color: rgba(0,0,0,0.05);
 }
 
 /*END PROFILE PAGE*/
