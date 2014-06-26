@@ -153,79 +153,84 @@ footer img {
 
 /*PROFILE PAGE*/
 #profile_content {
-	width: 1440px;
+	width: 1100px;
 	height: 700px;
-	border: 1px solid red;
+	/*border: 1px solid red;*/
+	background-color: rgba(0,0,0,0.1);
 	position: relative;
 	margin: auto;
 	left: 0;
 	right: 0;
-	top: 100px;
-
+	background-color: #89FF97;
 }
 
-#profile_left {
-	width: 300px;
-	height: 700px;
-	border: 1px solid black;
+#profile_bar {
+	width: 1100px;
+	height: 205px;
+	/*border: 1px solid black;*/
 	float: left;
+	position: relative;
+	background-color: rgba(0,0,0,0.3);
 }
 
 #profile_box {
 	width: 200px;
-	height: 300px;
-	border: 1px solid green;
-	position: relative;
-	left:30px;
-}
-
-#profile_comment {
-	width: 200px;
-	height: 300px;
-	border: 1px solid red;
-	position: relative;
-	left:30px;
-}
-
-#profile_center {
-	width: 500px;
-	height: 700px;
-	border: 1px solid blue;
-	position: relative;
-	float: left;
-	left: 100px;
-}
-
-.profile_postbox {
-	width: 400px;
 	height: 200px;
-	border:1px solid red;
+	/*border: 1px solid green;*/
+	position: relative;
+	left:30px;
+	float: left;
 }
 
-#profile_right {
-	width: 400px;
-	height: 700px;
-	border: 1px solid green;
+#profile_box img {
+	width: 100px;
+	height: 100px;
 	position: relative;
+	top:8px;
+	
+}
+
+#profile_box p {
+	position: relative;
+	top:28px;
+	line-height: 18px;
+	border: 1px black solid;
+	width: 98px;
+}
+
+#mapbox {
+	position: absolute;
 	float: left;
 	left:150px;
+	top:10px;
 }
 
-#profile_optbox {
-	width: 400px;
-	height: 60px;
-	border: 1px dashed red;
-}
-
-#profile_optbox ul li {
-	display: inline-block;
-}
-
-#profile_areadescription {
-	width: 400px;
+#profile_iconbox {
+	width: 300px;
 	height: 200px;
-	border: 1px solid black;
+	/*border: 1px solid black;*/
+	position: relative;
+	margin: auto;
+	left: 350px;
 }
+.profile_icons {
+	float: left;
+	margin-left: 30px;
+	position: relative;
+	top:15px;
+	/*border:1px solid black;*/
+	width: 60px;
+	line-height: 20px;
+	text-align: center;
+	
+}
+
+.profile_icons img {
+	border-radius: 35px;
+}
+
+
+
 /*END PROFILE PAGE*/
 
 
