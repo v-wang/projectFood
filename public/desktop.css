@@ -229,7 +229,13 @@ footer img {
 	border-radius: 35px;
 }
 
-
+#profile_topbox {
+	height: 400px;
+	width: 1000px;
+	border: 1px solid black;
+	position: relative;
+	top: 205px;
+}
 
 /*END PROFILE PAGE*/
 
