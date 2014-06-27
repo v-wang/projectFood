@@ -23,6 +23,7 @@ get '/newsfeed' do
 end
 
 post '/signup' do
+
 	if User.find_by(email: params[:user][:email])
 		"That email is taken! Choose another one!"
 	else 	
@@ -31,6 +32,17 @@ post '/signup' do
 		session[:user_id] = @user.id
 		redirect '/logged_in'
 	end
+
+	@user = User.create(params[:user])
+	flash[:notice] = "Welcome to Foodie Forum! New account created!"
+	session[:user_id] = @user.id
+	redirect '/user'
+end
+
+get '/logged_in' do
+	@user = User.find(session[:user_id])
+	erb :landingtest
+
 end
 
 post '/signin' do
@@ -77,6 +89,7 @@ post '/update' do
 	# current_user(@user)
 end
 
+
 # get '/users/:id' do 
 # 	@user = User.find(params[:id])
 # 	erb :landingtest
@@ -97,4 +110,13 @@ end
 # 		redirect '/'
 # 	end
 # end
+
+
+get '/user' do
+	erb :user
+end
+
+post '/post_rec' do
+
+end
 
