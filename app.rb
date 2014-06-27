@@ -15,6 +15,10 @@ get '/' do
 	erb :index
 end
 
+get '/newsfeed' do
+	erb :newsfeed
+end
+
 get '/signup' do
 	erb :signuptest
 end

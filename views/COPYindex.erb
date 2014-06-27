@@ -1,0 +1,100 @@
+
+
+<div id = "index_wrap">
+
+<div id ="about_wrap">
+
+	<header id="about_header">about us</header>
+
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident voluptates consequatur autem, est laudantium reprehenderit saepe eum numquam suscipit. Porro consequatur fuga consequuntur officiis perspiciatis nulla optio a enim repellat nam! Illum ipsum adipisci minus labore veritatis ut, commodi obcaecati minima non. Quod quibusdam enim officia sequi cupiditate maxime corporis cumque qui, assumenda aperiam. Quidem incidunt aliquid expedita tenetur beatae, dolorum magnam adipisci qui quod consequuntur odit sit, iure dolores et deleniti eius illo temporibus, pariatur quasi, accusamus sapiente architecto fugiat blanditiis! Aliquam voluptate velit laboriosam magnam provident molestias praesentium, id sunt sint animi, sapiente corporis est obcaecati pariatur et, deleniti possimus fuga ducimus similique. Illum dolore doloribus reiciendis incidunt quisquam aspernatur impedit, eos velit dolores consequatur itaque possimus eveniet minus eligendi voluptatem esse hic aliquid est natus, sed eius in recusandae nostrum! Illum placeat numquam distinctio vitae veniam vel amet qui, libero sint perferendis pariatur ut optio labore. Ea non quaerat natus rem, obcaecati dolorem aspernatur sint sapiente, pariatur, inventore ut, reiciendis consequuntur expedita nulla nobis. 
+	</p>
+
+</div>
+
+<div id = "login_wrap">
+
+	<header id = "login_header"> hello</header>
+
+	<div id ="login_form">
+	<form method="post" action="/signin">
+		  <input type="text" name="email" value="email">
+			<br/>
+		  <input type="password" name="password" value="password">
+			<br>
+
+		  <input type="submit" id="signinButton" value="sign in">
+	<a id="signupLink"> sign up </a>
+	</form>
+	</div>
+
+<!-- SIGN UP DIV HIDDEN UNTIL CLICKED -->
+
+	<div id = "signup_form">
+
+	<form method="post" action="/signup">
+		  <input type="text" name="email" value="email">
+			<br/>
+		  <input type="password" name="password" value="password">
+			<br>
+			<input type="text" name="fname" value="first name">
+			<br>
+			<input type="text" name="lname" value="last name">
+			<br>
+			<input type="integer" name="zipcode" value="zip code">
+			<br>
+
+		  <input type="submit" id="signupButton" value="sign up">
+
+	</form>
+
+
+	</div>
+
+
+	
+</div>
+
+
+
+</div>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+
+$("#signupLink").click(function(){
+	console.log("this works")
+	$("#signup_form").show(function(){
+			$(this).delay.slideDown();
+		})
+})
+
+
+// function hasClick(objId){
+// 	this.objID = objId
+// 	this.hasClick = false;
+// }
+
+// var signupClick = new hasClick("#signup_form");
+// var jsClick = new hasClick("#jsDiv");
+
+// $("#signupLink").click(function(){
+
+// 	if(signupClick.hasClick == false){
+// 		console.log
+// 		$("#signup_form").show(function(){
+// 			$(this).slideDown();
+// 		signupClick.hasClick = true;
+// 		})	
+// 	} 
+// 	else {
+// 		$("#signup_form").hide(function(){
+// 			$(this).slideUp();
+// 		signupClick.hasClick = false;
+// 		});
+// 	}
+
+// })
+
+
+});
+</script>
