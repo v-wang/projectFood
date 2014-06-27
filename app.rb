@@ -27,7 +27,7 @@ post '/signup' do
 	@user = User.create(params[:user])
 	flash[:notice] = "Welcome to Foodie Forum! New account created!"
 	session[:user_id] = @user.id
-	redirect '/logged_in'
+	redirect '/user'
 end
 
 get '/logged_in' do
@@ -71,5 +71,14 @@ get '/update' do
 end
 
 post '/update' do
+
+end
+
+
+get '/user' do
+	erb :user
+end
+
+post '/post_rec' do
 
 end
