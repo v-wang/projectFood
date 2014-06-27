@@ -16,10 +16,10 @@
 	<header id = "login_header"> hello</header>
 
 	<div id ="login_form">
-	<form method="post" action="/signin">
-		  <input type="text" name="email" value="email">
+	<form action="/signin" method="post">
+		  <input type="text" name="[user]email" value="email">
 			<br/>
-		  <input type="password" name="password" value="password">
+		  <input type="password" name="[user]password" value="passw">
 			<br>
 
 		  <input type="submit" id="signinButton" value="sign in">
@@ -32,15 +32,15 @@
 	<div id = "signup_form">
 
 	<form method="post" action="/signup">
-		  <input type="text" name="email" value="email">
+		  <input type="text" name="[user]email" value="email">
 			<br/>
-		  <input type="password" name="password" value="password">
+		  <input type="password" name="[user]password" value="password">
 			<br>
-			<input type="text" name="fname" value="first name">
+			<input type="text" name="[user]fname" value="first name">
 			<br>
-			<input type="text" name="lname" value="last name">
+			<input type="text" name="[user]lname" value="last name">
 			<br>
-			<input type="integer" name="zipcode" value="zip code">
+			<input type="integer" name="[user]zipcode" value="zip code">
 			<br>
 
 		  <input type="submit" id="signupButton" value="sign up">
