@@ -1,7 +1,7 @@
 source 'http://rubygems.org'
 ruby '2.1.1'
 
-gem 'activerecord'
+gem 'activerecord', '4.1.2'
 gem 'sinatra-activerecord'
 gem 'sqlite3'
 gem 'rake'
