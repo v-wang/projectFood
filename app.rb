@@ -15,8 +15,8 @@ get '/' do
 	erb :index
 end
 
-get '/profile' do
-	erb :profile
+get '/newsfeed' do
+	erb :newsfeed
 end
 
 get '/signup' do
