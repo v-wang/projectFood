@@ -44,7 +44,7 @@ post '/signin' do
 		if current_user_pw.nil?
 			"WRONG PW"
 		else 	
-			"RIGHT PW"	
+			redirect "/"	
 		end
 	end	
 end	
@@ -69,3 +69,6 @@ end
 post '/update' do
 
 end
+
+get '/profile' do
+	erb :
