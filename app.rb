@@ -15,6 +15,10 @@ get '/' do
 	erb :index
 end
 
+get '/profile' do
+	erb :profile
+end
+
 get '/signup' do
 	erb :signuptest
 end
