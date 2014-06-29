@@ -4,7 +4,7 @@
 
 <div id ="about_wrap">
 
-	<header id="about_header">about us</header>
+	<header id="about_header">foodie forum</header>
 
 	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident voluptates consequatur autem, est laudantium reprehenderit saepe eum numquam suscipit. Porro consequatur fuga consequuntur officiis perspiciatis nulla optio a enim repellat nam! Illum ipsum adipisci minus labore veritatis ut, commodi obcaecati minima non. Quod quibusdam enim officia sequi cupiditate maxime corporis cumque qui, assumenda aperiam. Quidem incidunt aliquid expedita tenetur beatae, dolorum magnam adipisci qui quod consequuntur odit sit, iure dolores et deleniti eius illo temporibus, pariatur quasi, accusamus sapiente architecto fugiat blanditiis! Aliquam voluptate velit laboriosam magnam provident molestias praesentium, id sunt sint animi, sapiente corporis est obcaecati pariatur et, deleniti possimus fuga ducimus similique. Illum dolore doloribus reiciendis incidunt quisquam aspernatur impedit, eos velit dolores consequatur itaque possimus eveniet minus eligendi voluptatem esse hic aliquid est natus, sed eius in recusandae nostrum! Illum placeat numquam distinctio vitae veniam vel amet qui, libero sint perferendis pariatur ut optio labore. Ea non quaerat natus rem, obcaecati dolorem aspernatur sint sapiente, pariatur, inventore ut, reiciendis consequuntur expedita nulla nobis. 
 	</p>
@@ -15,15 +15,20 @@
 
 	<header id = "login_header">hello</header>
 
+	<div id="tab_div">
+		<div id="login_tab">log in</div>
+		<div id="signup_tab">sign up</div>
+	</div>
+
 	<div id ="login_form">
 	<form action="/signin" method="post">
-		  <input type="text" name="[user]email" value="email">
+		  <input class= "textbox" type="text" name="[user]email" placeholder="email">
 			<br/>
-		  <input type="password" name="[user]password" value="passw">
+		  <input class= "textbox" type="password" name="[user]password" placeholder="password">
 			<br>
 
 		  <input type="submit" id="signinButton" value="sign in">
-	<a id="signupLink"> sign up </a>
+	<!-- <a id="signupLink"> sign up </a> -->
 	</form>
 	</div>
   
@@ -32,15 +37,15 @@
 	<div id = "signup_form">
 
 	<form method="post" action="/signup">
-		  <input type="text" name="[user]email" value="email">
+		  <input class= "textbox" type="text" name="[user]email" placeholder="email">
 			<br/>
-		  <input type="password" name="[user]password" value="password">
+		  <input class= "textbox" type="password" name="[user]password" placeholder="password">
 			<br>
-			<input type="text" name="[user]fname" value="first name">
+			<input class= "textbox" type="text" name="[user]fname" placeholder="first name">
 			<br>
-			<input type="text" name="[user]lname" value="last name">
+			<input class= "textbox" type="text" name="[user]lname" placeholder="last name">
 			<br>
-			<input type="integer" name="[user]zipcode" value="zip code">
+			<input class= "textbox" type="integer" name="[user]zipcode" placeholder="zip code">
 			<br>
 
 		  <input type="submit" id="signupButton" value="sign up">
@@ -50,7 +55,11 @@
 
 	</div>
 
-
+	<% if !flash[:notice].nil? %>
+		<div class="notice">
+		<%= flash[:notice] %>
+		</div>
+	<% end %>
 	
 </div>
 
@@ -61,40 +70,57 @@
 <script type="text/javascript">
 	$(document).ready(function(){
 
-$("#signupLink").click(function(){
-	console.log("this works")
-	$("#signup_form").show(function(){
-			$(this).delay.slideDown();
-		})
-})
-
-
-// function hasClick(objId){
-// 	this.objID = objId
-// 	this.hasClick = false;
-// }
-
-// var signupClick = new hasClick("#signup_form");
-// var jsClick = new hasClick("#jsDiv");
-
-// $("#signupLink").click(function(){
-
-// 	if(signupClick.hasClick == false){
-// 		console.log
-// 		$("#signup_form").show(function(){
-// 			$(this).slideDown();
-// 		signupClick.hasClick = true;
-// 		})	
-// 	} 
-// 	else {
-// 		$("#signup_form").hide(function(){
-// 			$(this).slideUp();
-// 		signupClick.hasClick = false;
-// 		});
-// 	}
-
+// $("#signup_tab").click(function(){
+// 	console.log("this works")
+// 	$("#signup_form").show(function(){
+// 			// $(this).delay.slideDown();
+// 		})
 // })
 
+
+function hasClick(objId){
+	this.objID = objId;
+	this.hasClick = false;
+
+}
+function activeLink(objId){
+	this.objID = objId;
+	this.activeLink = true;
+}
+
+var loginClick = new activeLink("#login_form");
+var signupClick = new hasClick("#signup_form");
+
+
+$("#signup_tab").click(function(){
+
+	if(signupClick.hasClick == false){
+		console.log
+		$("#signup_tab").css({"text-decoration":"underline","font-weight":"bold"});
+		$("#login_tab").css({"text-decoration":"none","font-weight":"normal"});
+		$("#signup_form").show(1);
+		// (function(){
+			// $(this).slideDown();
+		signupClick.hasClick = true;
+		loginClick.activeLink = false;
+		// })	
+	}
+})
+
+$("#login_tab").click(function(){
+
+	if(loginClick.activeLink == false){
+		console.log
+		$("#login_tab").css({"text-decoration":"underline","font-weight":"bold"});
+		$("#signup_tab").css({"text-decoration":"none","font-weight":"normal"});
+		$("#signup_form").hide(1)
+			// $(this).slideDown();
+		loginClick.activeLink = true;
+		signupClick.hasClick = false;
+
+	} 
+
+})
 
 });
 </script>

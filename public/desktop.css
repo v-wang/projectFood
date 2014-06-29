@@ -59,7 +59,7 @@ html, body {
 	min-width: 1175px;
 	height: 100%;
 	width: 100%;
-		font-family: Arial, sans-serif;
+	font-family: Arial, sans-serif;
 	font-size: 14px;
 }
 
@@ -78,9 +78,9 @@ footer, .push {
 	min-height: 100%;
 	height: auto !important;
 	margin: 0 auto -60px;
-
 	overflow: hidden;
 	padding-bottom: 60px;
+	display: block;
 
 }
 
@@ -98,13 +98,13 @@ a {
 	/*float: left;*/
 	min-width: 850px;
 	width:auto;
-
 	height: 100%;
 	/*height: 500px;*/
 	background-color: #eee;
 	position: absolute;
 	/*top: 60px;*/
 	padding: 30px;
+	padding-top: 50px;
 	margin: 0 auto;
 	left: 50%;
 	margin-left: -450px;
@@ -151,7 +151,7 @@ a {
 	height: 300px;
 	text-align: center;
 	position: relative;
-	margin: 20px 0px 0px 100px;
+	margin-left: 100px;
 /*	margin-left: auto;
 	margin-right: auto;*/
 	border-radius: 15px;
@@ -159,11 +159,47 @@ a {
 }
 
 #login_header {
-	margin-top: 15px;
+	margin-top: 10px;
 	font-size: 40px;
 }
 
 
+#login_tab, #signup_tab {
+	display: inline-block;
+	width: 65px;
+	margin-top: 8px;
+
+}
+
+#login_tab {
+	font-weight: bold;
+	text-decoration: underline
+}
+
+#login_tab:hover, #signup_tab:hover {
+	color: white;
+	font-weight: bold;
+	text-decoration: none;
+
+}
+#signup_tab {
+	/*color:#eee;*/
+}
+
+.textbox {
+	width: 130px;
+	height: 20px;
+	border: 1px solid white;
+}
+
+.textbox:hover {
+	border: 1px solid #000;
+}
+
+.textbox:focus {
+	border: 1px solid #aaa;
+	outline: 0;
+}
 /* ------ signup section -----*/
 
 
@@ -172,15 +208,33 @@ a {
 	float: left;
 	background-color: #fcae6f;
 	width: 200px;
-	height: 245px;
+	height: 221px;
 	text-align: center;
 	position: relative;
-	top: -92px;
+	top: -94px;
 	border-radius: 0 0 15px 15px;
 
 }
 
+#signinButton, #signupButton {
+	width: 60px;
+	font-size: 12px;
+	border: 0px solid;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	background-color: white;
+	color:#ff9540;
+}
 
+#signinButton:hover, #signupButton:hover {
+	border: 1px solid #aaa;
+
+}
+
+#signinButton:focus, #signupButton:focus {
+	outline: 0;
+	color: black;
+}
 /* END INDEX PAGE STYLESHEET */
 
 
