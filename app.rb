@@ -16,6 +16,7 @@ set :database, "sqlite3:form_app.sqlite3"
 # FUNCTIONING RUBY 
 get '/' do
 	erb :index
+	
 end
 
 get '/newsfeed' do
@@ -30,13 +31,8 @@ post '/signup' do
 		@user = User.create(params[:user])
 		flash[:notice] = "Welcome to Foodie Forum! New account created!"
 		session[:user_id] = @user.id
-		redirect '/logged_in'
+		redirect '/user'
 	end
-
-	@user = User.create(params[:user])
-	flash[:notice] = "Welcome to Foodie Forum! New account created!"
-	session[:user_id] = @user.id
-	redirect '/user'
 end
 
 get '/logged_in' do
@@ -54,7 +50,7 @@ post '/signin' do
 		if current_user_pw.nil?
 			"WRONG PW"
 		else 	
-			redirect "/"	
+			redirect "/user"	
 		end
 	end	
 end	
