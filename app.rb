@@ -24,12 +24,14 @@ get '/newsfeed' do
 end
 
 post '/signup' do
-
-	if User.find_by(email: params[:user][:email])
-		"That email is taken! Choose another one!"
+	current_user = User.find_by(email: params[:user][:email])
+	# if User.find_by(email: params[:user][:email])
+	if @user = current_user
+		flash[:alert3] = "There is already an account for this email."
+		redirect '/'
 	else 	
 		@user = User.create(params[:user])
-		flash[:notice] = "Welcome to Foodie Forum! New account created!"
+		flash[:notice1] = "Welcome to Foodie Forum! New account created!"
 		session[:user_id] = @user.id
 		redirect '/user'
 	end
@@ -44,6 +46,7 @@ end
 post '/signin' do
 	current_user = User.find_by_email(params[:user][:email])
 	current_user_pw = User.find_by_password params[:user][:password]
+
 	if current_user.nil? 
 		 "User not found!"
 	else 
@@ -52,6 +55,16 @@ post '/signin' do
 		else 	
 			redirect "/user"	
 		end
+
+	if current_user.nil?
+		 flash[:alert1] = "user not found"
+		 redirect '/'
+	elsif current_user_pw.nil?
+		flash[:alert2] = "incorrect password"
+		redirect '/'
+	else 	
+		redirect "/"	
+
 	end	
 end	
 # END FUNCTIONING RUBY 
@@ -113,6 +126,18 @@ get '/user' do
 end
 
 post '/post_rec' do
-
+	# @post = Post.create(params[:post][:title][:body])
+	@post = Post.new(params[:post])
+	# @post.user_id =
+	@post.postdate = Time.now
+	@post.save
+	# session[:user_id] = @user.id
+	redirect '/user'
 end
+
+
+
+
+
+
 

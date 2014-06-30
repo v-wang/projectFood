@@ -3,19 +3,19 @@
 <div id = "user_timeline">
 
 	<div id = "user_post_form">
-<!-- insert post form here only if current user is in his/her own user page, else hide  -->
 		
 		<header id="post_header">
 			post a rec
 		</header>
 
 		<form action="/post_rec" method="post">
-			<input type="text" name="post_title" value="title">
+			<input id = "post_textbox" type="text" name="[post]title" placeholder="title">
 			<br/>
-		  	<input type="text" name="post_body" value="what's your rec?">
+
+		  	<textarea name="[post]body" id="post_body" placeholder="what's your rec?"></textarea>
 			<br>
 
-		  	<input type="submit" id="submit_post" value="post">
+		  	<input type="submit" id="submit_postbtn" value="post">
 		</form>
 
 	</div>
@@ -128,24 +128,28 @@
 	</div>
 
 	<div id ="user_info">
-		<p> Melissa Lin <!-- INSERT USER FIRST NAME + LAST NAME --> </p>
+		<p><span id="user_fullname"> Melissa Lin <!-- INSERT USER FIRST NAME + LAST NAME --> </span></p>
 		<p> &lpar;12&rpar; posts <!-- INSERT # OF USERS POSTS --> </p>
 		<p> 24 followers <!-- INSERT # OF USERS FOLLOWERS --></p>
 		<p> 25 following <!-- INSERT # OF USERS THE USER IS FOLLOWING --></p>
 	</div>
 
 
+
+
+</div>
+
 	<div id="user_follower_list">
+<!-- 		<header class="list_header">
+			followers</header> -->
 		<p> <!-- INSERT LIST OF ALL USERS' FOLLOWRS--> </p>
 	</div>
 
 	<div id="user_following_list">
+<!-- 		<header class="list_header">
+			following</header> -->
 		<p> <!-- INSERT LIST OF ALL USERS THAT USER IS FOLLOWING --> </p>
 	</div>
-
-</div>
-
-
 
 
 
