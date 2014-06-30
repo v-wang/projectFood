@@ -29,11 +29,11 @@ helpers do
 end
 
 
-
 # #####################
 # FUNCTIONING RUBY 
 get '/' do
 	erb :index
+	
 end
 
 get '/newsfeed' do
