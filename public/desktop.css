@@ -582,12 +582,39 @@ footer a:hover {
 
 .post_style {
 	float: left;
+	position: relative;
 	width: 150px;
-	height: 200px;
+	height: 230px;
 	border: 1px dashed #ccc;
-	/*margin: 10px;*/
+	margin: 5px;
+	display: block;
 }
 
+.insert_image {
+	position: relative;
+	width: 150px;
+	height: 100px;
+	background-color: #ccc;
+	margin-bottom: 2px;
+}
+
+.post_title {
+	font-weight: bold;
+	margin-bottom: 3px;
+	text-decoration: underline;
+}
+
+.post_body {
+	margin-top: 5px;
+
+}
+.timestamp {
+	position: relative;
+	font-style: italic;
+	margin-top: 10px;
+	text-align: right;	
+	/*vertical-align: text-bottom;*/
+}
 
 
 

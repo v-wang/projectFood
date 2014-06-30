@@ -10,21 +10,22 @@ require './models'
 enable :sessions
 use Rack::Flash, :sweep => true
 set :sessions => true
-set :database, "sqlite3:form_app.sqlite3"
+configure(:development){set :database, "sqlite3:form_app.sqlite3"}
 
 
 helpers do
   def active_user
-    if session[:user_id] != nil 
-      	if session[:user_id] <= User.last.id
-      	return User.find(session[:user_id])
-    	else
-      	session[:user_id] = nil
-      	return nil
-    	end
-    else
-      return nil
-  	end
+  	 session[:user_id].nil? ? nil : User.find(session[:user_id])
+   #  if session[:user_id] != nil 
+   #    	if session[:user_id] <= User.last.id
+   #    	return User.find(session[:user_id])
+   #  	else
+   #    	session[:user_id] = nil
+   #    	return nil
+   #  	end
+   #  else
+   #    return nil
+  	# end
   end
 end
 
@@ -37,6 +38,8 @@ get '/' do
 end
 
 get '/newsfeed' do
+	# POST THE LAST 10 MOST RECENT POSTS FROM ALL USERS
+	@allposts = Post.all.order(:postdate).limit(10)
 	erb :newsfeed
 end
 
@@ -71,7 +74,7 @@ post '/signin' do
 		@user = current_user
 		if @user.password == params[:user][:password]
 			session[:user_id]= @user.id
-			redirect '/newsfeed'
+			redirect '/user'
 		else
 			flash[:alert2] = "incorrect password"
 			redirect '/'
@@ -88,6 +91,12 @@ post '/signin' do
 end	
 # END FUNCTIONING RUBY 
 # #####################
+
+# get '/user/:id' do
+#   @user = User.find(params[:id])
+#   erb :user
+# end
+
 
 get '/sign-out' do
   session[:user_id] = nil
@@ -146,13 +155,19 @@ end
 
 
 get '/user' do
-	erb :user
+	if active_user != nil
+	@post = active_user.posts.last
+		erb :user
+	else
+		redirect '/'
+	end
+
 end
 
 post '/post_rec' do
 	# @post = Post.create(params[:post][:title][:body])
 	@post = Post.new(params[:post])
-	# @post.user_id =
+	@post.user_id = active_user.id
 	@post.postdate = Time.now
 	@post.save
 	# session[:user_id] = @user.id

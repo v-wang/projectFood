@@ -15,6 +15,13 @@
 			<ul>
 				<li></li>
 				<li>contact us</li>
+				<li><a href="/newsfeed">public feed</a></li>
+				<li>
+					<% if session[:user_id] != nil %>
+						<a href="/user">my posts</a>
+
+				</li>
+					<% end %>
 				<li>
 					<% if session[:user_id] != nil %>
 						<a href="/updateinfo">my account</a>
@@ -22,6 +29,7 @@
 						<a href="/">my account</a>
 					<% end %>
 				</li>
+
 				<li>
 					<% if session[:user_id] != nil %>
 						<a href="/sign-	out">sign out</a>

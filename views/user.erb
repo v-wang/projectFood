@@ -21,22 +21,24 @@
 	</div>
 
 
+
+
 	<div class = "post_style" id="post1">
 		<div class = "insert_image">
 			
 		</div>
 		<header class = "post_title">
-			<p>ie. best burger ever
+			<p><%= @post.title %>
 			<!-- INSERT POST TITLE OF USERS' MOST RECENT POST -->
 			</p>
 		</header>
 		<div class = "post_body">
-			<p>recommend! this australian burger from ruby's is the bomb.
+			<p> <%= @post.body %>
 			<!-- INSERT POST BODY OF USERS' MOST RECENT POST -->
 			</p>
 		</div>
 		<div class="timestamp">
-			<p>timestamp</p>
+			<p> <%= @post.postdate %></p>
 		</div>
 	</div>
 	
