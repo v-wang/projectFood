@@ -12,6 +12,24 @@ use Rack::Flash, :sweep => true
 set :sessions => true
 set :database, "sqlite3:form_app.sqlite3"
 
+
+helpers do
+  def active_user
+    if session[:user_id] != nil 
+      	if session[:user_id] <= User.last.id
+      	return User.find(session[:user_id])
+    	else
+      	session[:user_id] = nil
+      	return nil
+    	end
+    else
+      return nil
+  	end
+  end
+end
+
+
+
 # #####################
 # FUNCTIONING RUBY 
 get '/' do
@@ -22,11 +40,11 @@ get '/newsfeed' do
 	erb :newsfeed
 end
 
+# check if an email matches any email in our user table database, if not create new user id and session id.
 post '/signup' do
-	current_user = User.find_by(email: params[:user][:email])
-	# if User.find_by(email: params[:user][:email])
-	if @user = current_user
-		flash[:alert3] = "There is already an account for this email."
+	existing_user = User.find_by(email: params[:user][:email])
+	if @user = existing_user
+		flash[:alert3] = "There is already an account for this email. "
 		redirect '/'
 	else 	
 		@user = User.create(params[:user])
@@ -42,22 +60,40 @@ get '/logged_in' do
 
 end
 
+# if user email and password matches values in database, create a session id and redirect to newsfeed.
+# else flash alerts for user/password error
 post '/signin' do
 	current_user = User.find_by_email(params[:user][:email])
 	current_user_pw = User.find_by_password params[:user][:password]
-	if current_user.nil?
+# if the email entered exists, assign instance variable user, if user password matches, create session id
+# for some reason, even when there is nothing in the input fields and we hit enter, we are redirected to newsfeed
+	if current_user != nil
+		@user = current_user
+		if @user.password == params[:user][:password]
+			session[:user_id]= @user.id
+			redirect '/newsfeed'
+		else
+			flash[:alert2] = "incorrect password"
+			redirect '/'
+		end
+	else current_user.nil?
 		 flash[:alert1] = "user not found"
 		 redirect '/'
-	elsif current_user_pw.nil?
-		flash[:alert2] = "incorrect password"
-		redirect '/'
-	else 	
-		redirect "/"	
+	# elsif current_user_pw.nil?
+	# 	flash[:alert2] = "incorrect password"
+	# 	redirect '/'
+	# else 	
+	# 	redirect "/"	
 	end	
 end	
 # END FUNCTIONING RUBY 
 # #####################
 
+get '/sign-out' do
+  session[:user_id] = nil
+  redirect '/'
+
+end  
 
 get '/logged_in' do
 	@user = User.find(session[:user_id])

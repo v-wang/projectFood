@@ -6,7 +6,7 @@
 
 	<header id="about_header">foodie forum</header>
 
-	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident voluptates consequatur autem, est laudantium reprehenderit saepe eum numquam suscipit. Porro consequatur fuga consequuntur officiis perspiciatis nulla optio a enim repellat nam! Illum ipsum adipisci minus labore veritatis ut, commodi obcaecati minima non. Quod quibusdam enim officia sequi cupiditate maxime corporis cumque qui, assumenda aperiam. Quidem incidunt aliquid expedita tenetur beatae, dolorum magnam adipisci qui quod consequuntur odit sit, iure dolores et deleniti eius illo temporibus, pariatur quasi, accusamus sapiente architecto fugiat blanditiis! Aliquam voluptate velit laboriosam magnam provident molestias praesentium, id sunt sint animi, sapiente corporis est obcaecati pariatur et, deleniti possimus fuga ducimus similique. Illum dolore doloribus reiciendis incidunt quisquam aspernatur impedit, eos velit dolores consequatur itaque possimus eveniet minus eligendi voluptatem esse hic aliquid est natus, sed eius in recusandae nostrum! Illum placeat numquam distinctio vitae veniam vel amet qui, libero sint perferendis pariatur ut optio labore. Ea non quaerat natus rem, obcaecati dolorem aspernatur sint sapiente, pariatur, inventore ut, reiciendis consequuntur expedita nulla nobis. 
+	<p>a place for those who find appreciation in their meals and want to share it with others.
 	</p>
 
 </div>
@@ -55,29 +55,14 @@
 
 	</div>
 
-	<% if !flash[:alert1].nil? %>
+	<% for a in [:alert1, :alert2, :alert3, :notice1] do if !flash[a].nil? %>
 		<div class="notice">
-		<%= flash[:alert1] %>
+		<%= flash[a] %>
 		</div>
+	<% end %>
 	<% end %>
 	
-	<% if !flash[:alert2].nil? %>
-		<div class="notice">
-		<%= flash[:alert2] %>
-		</div>
-	<% end %>
 
-	<% if !flash[:alert3].nil? %>
-		<div class="notice">
-		<%= flash[:alert3] %>
-		</div>
-	<% end %>
-
-	<% if !flash[:notice1].nil? %>
-		<div class="notice">
-		<%= flash[:notice1] %>
-		</div>
-	<% end %>
 </div>
 
 

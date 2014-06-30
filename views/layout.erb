@@ -15,7 +15,21 @@
 			<ul>
 				<li></li>
 				<li>contact us</li>
-				<li><a href="/updateinfo">my account</a></li>
+				<li>
+					<% if session[:user_id] != nil %>
+						<a href="/updateinfo">my account</a>
+					<% else %>
+						<a href="/">my account</a>
+					<% end %>
+				</li>
+				<li>
+					<% if session[:user_id] != nil %>
+						<a href="/sign-	out">sign out</a>
+				</li>
+					<% else %> 
+						<li></li>
+					<% end %>
+				
 			</ul>
 
 </nav>
